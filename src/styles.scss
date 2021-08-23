@@ -1,1 +1,48 @@
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@import '~@angular/material/theming';
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$ogame-primary: mat-palette($mat-indigo);
+$ogame-accent: mat-palette($mat-pink, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$ogame-warn: mat-palette($mat-red);
+
+// Create the theme object (a Sass map containing all of the palettes).
+$ogame-theme: mat-light-theme($ogame-primary, $ogame-accent, $ogame-warn);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($ogame-theme);
+
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+:root{
+    --primary: #0B0C10;
+    --secondary: #1F2833;
+    --terciary: #C5C6C7;
+    --alternative: #66FCF1;
+    --darkAlternative: #45A29E;
+}
+
+.custom-body{
+    background-color: var(--primary);}
+
+.title{
+    font-size: 32px;
+    color: var(--alternative);
+}
